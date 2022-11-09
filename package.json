@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "movie_booking_system",
+  "version": "1.0.0",
+  "description": "Project for software engr to desgin and impliment a movie booking service",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Brown, Melody Ortega, Evan Griffin",
+  "license": "ISC"
+}
