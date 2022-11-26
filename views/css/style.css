@@ -6,16 +6,18 @@ body {
 }
 
 .container {
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
 }
 
 header {
   background: #85c0de;
+  height: 100px;
 }
 a img{
     width: 30px;
     height: auto;
+
 }
 header::after {
   content: '';
@@ -36,6 +38,7 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  padding-top: 20px;
 }
 
 nav li {
@@ -75,6 +78,7 @@ nav a:hover::before {
 }
 .container h1{
     padding-top: 20px;
+    color: #222;
 }
 
 @media all and (max-width:500px) {

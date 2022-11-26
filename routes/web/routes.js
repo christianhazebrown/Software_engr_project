@@ -10,8 +10,7 @@ router.get("/catalog", function (req, res) {
 });
 
 router.get("/checkout", function (req, res) {
-   res.render("checkout.ejs" , {title: "catalog"});
+   res.render("checkout.ejs" , {title: "checkout"});
 });
-
 
 module.exports = router;

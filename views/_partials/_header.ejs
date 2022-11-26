@@ -14,7 +14,7 @@
     
     <header>
         <div class="container">
-            <h1>Movie Booking System</h1>
+            <h1 class="logo">Movie Booking System</h1>
             <nav>
                 <ul>
                     <% if(title == 'home'){ %>
@@ -22,10 +22,13 @@
                     <%}%>
                     <% if(title == 'catalog'){ %>
                         <li><a href="/">Home</a></li>
+                        <li><a href="/checkout">cart</a></li>
                     <%}%>
-                    <% if(title == 'catalog'){ %>
-                        <li><a href="/"><img src="cart.png"></a></li>
+                    <% if(title == 'checkout'){ %>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/catalog">Catalog</a></li>
                     <%}%>
+                    
                 </ul>
             </nav>
         </div>
