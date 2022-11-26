@@ -13,7 +13,7 @@ app.set("port", process.env.PORT || 3000)
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
 
-app.use("/", require("./routes/web"));
+app.use("/", require("./routes/web/routes"));
 app.use(express.static(__dirname + '/views'))
 //app.use("/api", require("./routes/api"));
 

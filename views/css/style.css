@@ -1,0 +1,218 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.landing{
+    text-align: center;
+    padding-bottom: 450px;
+}
+.landing a{
+    color:white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    margin: 0 0;
+
+}
+.landing h4{
+    color: red;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 0;
+    padding-top: 250px;
+}
+.landing p{
+    opacity: 55%;
+    margin: 0 0;
+}
+header{
+    background: black
+}
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+div h1{
+    float: left;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    font-weight: 100;
+    color: white
+    
+}
+nav{
+    float: right;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+    position: relative;
+}
+nav a{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(160, 160, 160);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+nav a:hover{
+    color: red
+}
+nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    width:0%;
+    transition: all ease-in-out 200ms;
+}
+nav a:hover::before{
+    width:100%;
+}
+body{
+    position: relative;
+    background-image: url(./images/Web\ Porfolio\ background.jpg);
+    background-position: center;
+    margin: 0;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 50% 50%;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+a img{
+    width: 30px;
+    height: auto;
+}
+body::before{
+    height:100%;
+}
+.container h4{
+    font-weight: 100;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+}
+ul {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+h2{
+    font-weight: 100;
+}
+.personal-info p{
+    padding-left: 20px;
+}
+
+.achivement-info p{
+    padding-left: 20px;
+}
+.languages-info ul{
+    text-align: left;
+    padding-left: 20px;
+}
+.class-info ul{
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.class-info ul li{
+    padding-bottom: 5px;
+}
+.project-info ul{
+    text-align: left;
+    padding-left: 20px;
+}
+.project-info ul p{
+    padding-left: 20px;
+    margin: .5%;
+}
+.project-info ul li a{
+    text-align: left;
+}
+.project-info a{
+    text-align: left;
+    
+}
+.footer .container{
+    background-color: black;
+}
+.footer-col ul li{
+    opacity: 55%;
+    display: inline-block;
+    padding-left: 30px;
+    
+}
+
+@media all and (max-width:500px) {
+    .container{
+        width:90%;
+    }
+    div h1{
+        float: left;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 15px;
+        color: white;
+
+    }
+    nav li{
+        display: inline-block;
+        margin-left: 25px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .landing{
+        padding-bottom: 410px;
+    }
+    .landing-container{
+        position: fixed;
+        width: 600px;
+        height: 200px;
+        left: 50%;
+        top: 0%;
+        margin-left: -300px; 
+        margin-top: 200px;
+    }
+    .landing h4{
+        color: red;
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+        margin: 0 0;
+        padding-top: 0px;
+    }
+    body{
+        background-image: url(./images/Web\ Porfolio\ background.jpg);
+        background-position: center;
+        background-size: 100% 50%;
+    }
+    footer{
+        background-color: black;
+        position: fixed;
+        bottom: 0px;
+        width:100%;
+    }
+    .footer-col ul{
+        padding-left: 0px;
+        padding-right: 30px;
+    }
+    .footer-col ul li{
+        opacity: 55%;
+        display: inline-block;
+        text-align: center;
+        padding-left: 30px;
+    }
+}

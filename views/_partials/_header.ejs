@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Christian Brown</title>
+        <title>Movie Booking System</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../css/style.css" rel="stylesheet" type="text/css" >
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,15 @@
     
     <header>
         <div class="container">
+            <h1>Movie Booking System</h1>
+            <ul>
+                <% if(title == 'home'){ %>
+                    <li><a href="/catalog">Catalog</a></li>
+                <%}%>
+                <% if(title == 'catalog'){ %>
+                    <li><a href="/">Home</a></li>
+                <%}%>
+            </ul>
         </div>
 
     </header>
