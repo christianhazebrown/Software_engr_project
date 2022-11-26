@@ -9,5 +9,9 @@ router.get("/catalog", function (req, res) {
    res.render("catalog.ejs" , {title: "catalog"});
 });
 
+router.get("/checkout", function (req, res) {
+   res.render("checkout.ejs" , {title: "catalog"});
+});
+
 
 module.exports = router;

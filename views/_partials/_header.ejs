@@ -15,14 +15,19 @@
     <header>
         <div class="container">
             <h1>Movie Booking System</h1>
-            <ul>
-                <% if(title == 'home'){ %>
-                    <li><a href="/catalog">Catalog</a></li>
-                <%}%>
-                <% if(title == 'catalog'){ %>
-                    <li><a href="/">Home</a></li>
-                <%}%>
-            </ul>
+            <nav>
+                <ul>
+                    <% if(title == 'home'){ %>
+                        <li><a href="/catalog">Catalog</a></li>
+                    <%}%>
+                    <% if(title == 'catalog'){ %>
+                        <li><a href="/">Home</a></li>
+                    <%}%>
+                    <% if(title == 'catalog'){ %>
+                        <li><a href="/"><img src="cart.png"></a></li>
+                    <%}%>
+                </ul>
+            </nav>
         </div>
 
     </header>
