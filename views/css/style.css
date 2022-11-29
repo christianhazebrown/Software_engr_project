@@ -81,6 +81,9 @@ nav a:hover::before {
     color: #222;
 }
 
+.Shopping-cart h2{
+  padding-left: 40px;
+}
 @media all and (max-width:500px) {
     
 }
