@@ -9,8 +9,7 @@ var passport = require("passport");
 var flash = require("connect-flash");
 var params = require("./params/params");
 const { application } = require("express");
-const setuppassport = require("./setuppassport");
-
+var setuppassport = require("./setuppassport");
 //create instance of app
 var app = express();
 mongoose.connect(params.DATABASECONNECTION);
@@ -32,8 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use("/", require("./routes/web/home"));
-app.use(express.static(__dirname + '/views'))
+app.use("/", require("./routes/web"));
 //app.use("/api", require("./routes/api"));
 
 app.listen(app.get("port"),function(){

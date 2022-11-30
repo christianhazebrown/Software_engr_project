@@ -4,8 +4,10 @@ var passport = require("passport");
 
 var User = require("../../models/user");
 //get the index,ejs
+
+//get home.ejs after login
 router.get("/", function (req, res) {
-   res.render("index.ejs" , {title: "home"});
+   res.render("home.ejs" , {title: "home"});
 });
 //get catalog,ejs
 router.get("/catalog", function (req, res) {
@@ -19,6 +21,9 @@ router.get("/checkout", function (req, res) {
 router.get("/cart", function (req, res) {
    res.render("cart.ejs" , {title: "cart"});
 });
+
+
+
 //get login.ejs
 router.get("/login", function (req, res) {
    res.render("login.ejs" , {title: "login"});
@@ -27,11 +32,30 @@ router.get("/login", function (req, res) {
 router.get("/signup", function (req, res) {
    res.render("signup.ejs" , {title: "signup"});
 });
-//check user signup credentials
+
+
+
+
+router.get("/logout", function(req, res, next){
+   req.logout(function(err){
+      if(err){return next(err);}
+   });
+   res.redirect("/");
+});
+
+// check for login user if cred. are correct redirects to home
+router.post("/login",passport.authenticate("login", {
+   successRedirect: "/",
+   failureRedirect: "/login",
+   failureFlash: true
+}));
+
+//check user signup credentials redirects to home
 router.post("/signup", function (req, res, next) {
    var username = req.body.username;
    var email = req.body.email;
    var password = req.body.password;
+   var phonenumber = req.body.phone_number
 
    User.findOne({ email: email }, function (err, user) {
       if (err) { return next(err); }
@@ -43,7 +67,8 @@ router.post("/signup", function (req, res, next) {
       var newUser = new User({
          username: username,
          password: password,
-         email: email
+         email: email,
+         phonenumber: phonenumber
       });
 
       newUser.save(next);

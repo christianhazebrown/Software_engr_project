@@ -18,21 +18,19 @@
             <h1 class="logo">Movie Booking System</h1>
             <nav>
                 <ul>
-                    <% if(title == 'home'){ %>
+                    <% if(title == 'index'){ %>
                         <li><a href="/signup">Sign Up</a></li>
                         <li><a href="/login">Login</a></li>
                     <%}%>
-                    <% if(title == 'catalog'){ %>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/checkout">cart</a></li>
+                    <% if(currentUser != null){ %>
+                        <li><a herf="#">Welcome <%= currentUser.username %>!</a></li>
+                        <li><a href="/view-movies">Browse</a></li>
+                        <li><a href="/cart">Cart</a></li>
+                        <li><a href="/logout">Logout</a></li>
                     <%}%>
-                    <% if(title == 'cart'){ %>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/catalog">Catalog</a></li>
-                    <%}%>
-                    <% if(title == 'checkout'){ %>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/catalog">Catalog</a></li>
+                    <% if(currentUser == null){ %>
+                        <li><a href="/signup">Sign Up</a></li>
+                        <li><a href="/login">Login</a></li>
                     <%}%>
                     
                 </ul>

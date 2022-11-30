@@ -7,8 +7,7 @@ var userSchema = mongoose.Schema({
     username:{type:String, required:true},
     email:{type:String, required:true, unique:true},
     password:{type:String, required:false},
-    phonenumber:{type:Number,required:true, unique:true},
-    moderator:{type:Boolean, required:false, default: false},
+    phonenumber:{type:String, required:true, unique:true},
     admin:{type:Boolean, required:false, default: false},
     createdAt:{type:Date, default:Date.now}
 });
