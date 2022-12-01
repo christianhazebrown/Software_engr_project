@@ -1,13 +1,14 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-
+var ensureAuthenticated = require("../../auth/auth").ensureAuthenticated
+var ensureAuthenticatedAdmin = require("../../auth/auth").ensureAdmin
 var User = require("../../models/user");
 //get the index,ejs
 
 //get home.ejs after login
 router.get("/", function (req, res) {
-   res.render("home.ejs" , {title: "home"});
+   res.render("home.ejs" , {title: "index"});
 });
 //get catalog,ejs
 router.get("/catalog", function (req, res) {
@@ -18,12 +19,15 @@ router.get("/checkout", function (req, res) {
    res.render("checkout.ejs" , {title: "checkout"});
 });
 //get cart.ejs
-router.get("/cart", function (req, res) {
+router.get("/cart",  function (req, res) {
    res.render("cart.ejs" , {title: "cart"});
 });
 
 
 
+router.get("/admin" ,ensureAuthenticatedAdmin, function(req,res){
+   res.render("admin.ejs", {title:"admin"});
+})
 //get login.ejs
 router.get("/login", function (req, res) {
    res.render("login.ejs" , {title: "login"});
@@ -35,7 +39,7 @@ router.get("/signup", function (req, res) {
 
 
 
-
+//user logout
 router.get("/logout", function(req, res, next){
    req.logout(function(err){
       if(err){return next(err);}

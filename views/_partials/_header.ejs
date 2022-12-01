@@ -18,13 +18,14 @@
             <h1 class="logo">Movie Booking System</h1>
             <nav>
                 <ul>
-                    <% if(title == 'index'){ %>
-                        <li><a href="/signup">Sign Up</a></li>
-                        <li><a href="/login">Login</a></li>
-                    <%}%>
+                    <!-- if we are at the index page "first page of website" -->
+                    <!-- if we are logged in and are an admin -->
                     <% if(currentUser != null){ %>
                         <li><a herf="#">Welcome <%= currentUser.username %>!</a></li>
-                        <li><a href="/view-movies">Browse</a></li>
+                        <% if(currentUser.admin == true){ %>
+                            <li><a href="/admin">Admin Portal</a></li>
+                        <%}%>
+                        <li><a href="/catalog">Browse</a></li>
                         <li><a href="/cart">Cart</a></li>
                         <li><a href="/logout">Logout</a></li>
                     <%}%>
@@ -41,3 +42,16 @@
 
 
     <body>
+        <div class="container">
+
+            <% if (error && error.length > 0){ %>
+                <div class="alert alert-danger" role = "alert">
+                    <%= error %> 
+                </div>
+            <%}%>
+        
+            <% if (info && info.length > 0){ %>
+                <div class="alert alert-info" role = "alert">
+                    <%= info %> 
+                </div>
+            <%}%>
