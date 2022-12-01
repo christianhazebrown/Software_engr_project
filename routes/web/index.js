@@ -10,5 +10,8 @@ router.use(function(req,res,next){
     next();
 })
 
+
 router.use("/", require("./home"));
+router.use("/admin", require("./admin"))
+
 module.exports = router;

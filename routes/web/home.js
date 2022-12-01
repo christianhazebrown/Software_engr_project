@@ -8,7 +8,7 @@ var User = require("../../models/user");
 
 //get home.ejs after login
 router.get("/", function (req, res) {
-   res.render("home.ejs" , {title: "index"});
+   res.render("home/home" , {title: "index"});
 });
 //get catalog,ejs
 router.get("/catalog", function (req, res) {
@@ -25,16 +25,13 @@ router.get("/cart",  function (req, res) {
 
 
 
-router.get("/admin" ,ensureAuthenticatedAdmin, function(req,res){
-   res.render("admin.ejs", {title:"admin"});
-})
 //get login.ejs
 router.get("/login", function (req, res) {
-   res.render("login.ejs" , {title: "login"});
+   res.render("home/login" , {title: "login"});
 });
 //get signup.ejs
 router.get("/signup", function (req, res) {
-   res.render("signup.ejs" , {title: "signup"});
+   res.render("home/signup" , {title: "signup"});
 });
 
 
@@ -85,7 +82,5 @@ router.post("/signup", function (req, res, next) {
    failureFlash: true
 }));
 
-router.get("/admin", function (req, res) {
-   res.render("admin.ejs" , {title: "admin"});
-});
+
 module.exports = router;

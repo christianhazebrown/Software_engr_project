@@ -1,0 +1,47 @@
+<%- include ("../_partials/_header.ejs"); %>
+ 
+<div class="row">
+    <div class="col-md-6">
+        <h1>New Movie</h1>
+    </div>
+</div>
+ 
+<div class="row">
+    <div class="col-md-6">
+        <form action="/admin/addMovie" method="POST">
+            <div class="form-group">
+                <label for="inputTitle">Title</label>
+                <input type="text" class="form-control" placeholder="Title" id="inputTitle" name="title">
+            </div>
+ 
+            <div class="form-group">
+                <label for="inputDescription">Decription</label>
+                <textarea class="form-control" rows="3" id="inputDescription" placeholder="Description" name="description"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="inputDescription">Year Released</label>
+                <input type="text" class="form-control" id="inputyearReleased" placeholder="Year Released" name="yearReleased"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="inputDescription">Actors(seperate by commas)</label>
+                <input type="text" class="form-control" rows="3" id="inputContent" placeholder="Actors" name="actors"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputDescription">Price</label>
+                <input type="text" class="form-control" id="price" placeholder="Price" name="price"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputDescription">Listed Times(seperatre by commas)</label>
+                <input type="text" class="form-control" id="listedTimes" placeholder="Times" name="listedTimes"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" href="#" role="button">Create</button>
+            </div>
+    </div>
+ 
+    </form>
+</div>
+ 
+<%- include ("../_partials/_footer.ejs"); %>
