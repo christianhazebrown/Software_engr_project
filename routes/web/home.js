@@ -10,20 +10,6 @@ var User = require("../../models/user");
 router.get("/", function (req, res) {
    res.render("home/home" , {title: "index"});
 });
-//get catalog,ejs
-router.get("/catalog", function (req, res) {
-   res.render("catalog.ejs" , {title: "catalog"});
-});
-//get checkout.ejs
-router.get("/checkout", function (req, res) {
-   res.render("checkout.ejs" , {title: "checkout"});
-});
-//get cart.ejs
-router.get("/cart",  function (req, res) {
-   res.render("cart.ejs" , {title: "cart"});
-});
-
-
 
 //get login.ejs
 router.get("/login", function (req, res) {

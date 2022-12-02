@@ -1,0 +1,31 @@
+<%- include('../_partials/_header'); -%>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Title</h2>
+        <h3><%= post.title %></h3>
+    </div>
+</div>
+
+
+<div class="row">
+   <div class="col-md-12">
+       <div class="panel panel-default">
+          <div class="panel-body">
+             Description:
+              <%= post.description %><br>
+              Price:<br>
+              <p>$<%= post.price %> per ticket</p><br>
+              Actors:
+              <p><%= post.actors %></p><br>
+              Available Times:
+              <p><%= post.listedtimes %>pm</p>
+              <p><a href="/catalog/cart" class="btn btn-primary" role="button">Add to Cart</a></p>
+              <p><a href="/catalog" class="btn btn-primary" role="button">Back</a></p>
+          </div>
+       </div>
+   </div>
+</div>
+
+
+<%- include ('../_partials/_footer'); -%>

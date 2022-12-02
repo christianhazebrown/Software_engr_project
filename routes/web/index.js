@@ -13,5 +13,6 @@ router.use(function(req,res,next){
 
 router.use("/", require("./home"));
 router.use("/admin", require("./admin"))
+router.use("/catalog", require("./customer"))
 
 module.exports = router;

@@ -24,10 +24,12 @@
                         <li><a herf="#">Welcome <%= currentUser.username %>!</a></li>
                         <% if(currentUser.admin == true){ %>
                             <li><a href="/admin">Admin Portal</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        <%}else{%>
+                            <li><a href="/catalog">Browse</a></li>
+                            <li><a href="/cart">Cart</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         <%}%>
-                        <li><a href="/catalog">Browse</a></li>
-                        <li><a href="/cart">Cart</a></li>
-                        <li><a href="/logout">Logout</a></li>
                     <%}%>
                     <% if(currentUser == null){ %>
                         <li><a href="/signup">Sign Up</a></li>

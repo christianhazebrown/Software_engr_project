@@ -1,17 +1,21 @@
 var express = require("express");
-const moviePost = require("../../models/movie");
+var Post = require("../../models/movie");
 var ensureAuthenticatedAdmin = require("../../auth/auth").ensureAdmin
 
 var router = express.Router();
 //require the scheama created for creating new database entry
 var postMovie = require("../../models/movie");
-
+//ensure the user thats longed in is an admin
 router.use(ensureAuthenticatedAdmin);
-
+//gets index of admin
 router.get("/" , function(req,res){
-    res.render("admin/admin", {title:"admin"});
-});
+    Post.find({movieID:req.user._id}).exec(function(err, post){
+        if(err){console.log(err)}
+        res.render("admin/admin", {post: post});
+    });
 
+});
+// route to add new database entry for movie
 router.get("/addMovie", function(req,res){
     res.render("admin/addMovie")
 })
@@ -24,6 +28,7 @@ router.post("/addMovie", function(req, res){
         yearReleased:req.body.yearReleased,
         actors:req.body.actors,
         price: req.body.price,
+        movieID: req.user.id,
         listedtimes: req.body.listedTimes
     });
 
@@ -33,5 +38,11 @@ router.post("/addMovie", function(req, res){
     });
 
  });
+//: router parameter to get movie id
+//  router.get("/:movieID", function(req,res){
+//     Post.findById(req.params.movieID).exec(function(err,post){
+//         res.render("admin/moviedetail",{post:post})
+//     })
+// })
 
 module.exports = router;
