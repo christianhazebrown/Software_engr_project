@@ -14,5 +14,6 @@ router.use(function(req,res,next){
 router.use("/", require("./home"));
 router.use("/admin", require("./admin"))
 router.use("/catalog", require("./customer"))
+router.use("/cart", require("./cart"))
 
 module.exports = router;

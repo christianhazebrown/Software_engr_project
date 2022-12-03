@@ -12,14 +12,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
     </head>
-    
-    <header>
-        <div class="container">
-            <h1 class="logo">Movie Booking System</h1>
-            <nav>
-                <ul>
-                    <!-- if we are at the index page "first page of website" -->
-                    <!-- if we are logged in and are an admin -->
+
+
+
+    <body>
+            <div class="navbar navbar-default navbar-static-top" role="navigation">
+                 <div class="container">
+                    <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Movie Booking System</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+            
                     <% if(currentUser != null){ %>
                         <li><a herf="#">Welcome <%= currentUser.username %>!</a></li>
                         <% if(currentUser.admin == true){ %>
@@ -35,15 +39,13 @@
                         <li><a href="/signup">Sign Up</a></li>
                         <li><a href="/login">Login</a></li>
                     <%}%>
-                    
-                </ul>
-            </nav>
-        </div>
-
-    </header>
+                    </ul>
+                </div>
+            </div>
+             
 
 
-    <body>
+
         <div class="container">
 
             <% if (error && error.length > 0){ %>

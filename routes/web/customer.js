@@ -1,7 +1,8 @@
 var express = require("express");
 var Post = require("../../models/movie");
 var ensureAuthenticated = require("../../auth/auth").ensureAuthenticated
-
+let cart = []
+let i=0
 var router = express.Router();
 // ensure the user is logged in
 router.use(ensureAuthenticated);
@@ -20,4 +21,10 @@ router.get("/:post_id", function(req,res){
     })
 })
 
+router.get("/cart/:post_id", function(req,res){
+    cart[i] = req.params.post_id
+    res.redirect("/catalog")
+    i++
+    console.log(cart)
+})
 module.exports = router;
