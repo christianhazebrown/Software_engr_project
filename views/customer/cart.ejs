@@ -1,12 +1,11 @@
 <%- include ("../_partials/_header.ejs"); %>
  
 <h1>Cart</h1>
- 
-<% post.forEach(function(post) { %>
+<% display.forEach(function(display){ %>
     <div class="row"><div class="col-sm-6 col-md-offset-3">
         <div class="thumbnail">
-            <% if(post.image != null){%>
-                <img src="<%= "/" + post.image %>"
+            <% if(display.image != null){%>
+                <img src="<%= "/" + display.image %>"
                     alt="logo"
                     style="height:200px;width:px;display:block">
             <%}else{%>
@@ -15,11 +14,11 @@
                     style="height:200px;width:px;display:block">
             <%}%>
             <div class="caption">
-                <h3><%= post.title %></h3>
-                <p><%= post.description %></p>
-                <p>$<%= post.price %> per ticket</p>
-                <p><%= post.actors %></p>
-                <p><%= post.listedtimes %>pm</p>
+                <h3><%= display.title %></h3>
+                <p><%= display.description %></p>
+                <p>$<%= display.price %> per ticket</p>
+                <p><%= display.actors %></p>
+                <p><%= display.listedtimes %>pm</p>
             </div>
         </div>
     </div>
